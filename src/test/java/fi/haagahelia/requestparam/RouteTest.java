@@ -1,6 +1,6 @@
 package fi.haagahelia.requestparam;
 
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.equalToIgnoringCase;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -26,6 +26,6 @@ public class RouteTest {
     public void getHello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/hello?location=moon&name=John").accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Welcome to the moon John!")));
+                .andExpect(content().string(equalToIgnoringCase("Welcome to the moon John!")));
     }
 }
