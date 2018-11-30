@@ -5,8 +5,11 @@ Create Spring Boot application that handle GET request to the endpoint **/hello*
 text '*Welcome to the {location value} {name value}!*'
 
 **Example output**
+
 Request:  
+
 http://localhost:8080/hello?location=moon&name=John 
 
 Prints:
+
 Welcome to the moon John!
